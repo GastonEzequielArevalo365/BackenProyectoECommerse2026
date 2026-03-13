@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mouse Gamer RGB",
+    "caracteristicas": "16000 DPI, RGB",
+    "precio": 45.99,
+    "estado": 1,
+    "categoria_id": 2
+  },
+  {
+    "id": 2,
+    "nombre": "Teclado Mecánico",
+    "caracteristicas": "Switch Red, RGB",
+    "precio": 89.50,
+    "estado": 1,
+    "categoria_id": 2
+  },
+  {
+    "id": 3,
+    "nombre": "Monitor 24 pulgadas",
+    "caracteristicas": "Full HD, 144Hz",
+    "precio": 210.00,
+    "estado": 1,
+    "categoria_id": 1
+  },
+  {
+    "id": 4,
+    "nombre": "Auriculares Gaming",
+    "caracteristicas": "7.1 Surround",
+    "precio": 65.75,
+    "estado": 1,
+    "categoria_id": 3
+  },
+  {
+    "id": 5,
+    "nombre": "Webcam HD",
+    "caracteristicas": "1080p, USB",
+    "precio": 39.90,
+    "estado": 0,
+    "categoria_id": 4
+  }
+]
