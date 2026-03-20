@@ -15,4 +15,8 @@ route.get('/productos',productosController.getAllProductos)
 //Usamos el :id porque lo que recibe como parámetro de la ruta pueden ser distintos valores.
 route.get('/productos/:id',productosController.getProductoById)
 
+route.delete('/productos/:id', productosController.deleteProductoById)
+
+route.post('/productos',productosController.crearProducto)
+
 module.exports = route
