@@ -6,9 +6,14 @@
 
 const {Router} = require('express')
 
-const productosController = require('../controllers/productos.controller')
+//Traemos el objeto con los controladores del index de dicha carpeta (También podemos traer todo lo que necesitemos para desarrollar).
+const productosController = require('../controllers')
+const productosMiddlewares = require('../middlewares/productos.middlewares')
 
+//La siguiente línea ejecuta la funcion Router de express que separa y distingue que nuestra ruta actual es para productos.
 const route = Router()
+
+//route.use(productosMiddlewares.requestTime)
 
 route.get('/productos',productosController.getAllProductos)
 
@@ -19,4 +24,5 @@ route.delete('/productos/:id', productosController.deleteProductoById)
 
 route.post('/productos',productosController.crearProducto)
 
+//En el module exportando todas las rutas para ver cual encaja con la petición http
 module.exports = route

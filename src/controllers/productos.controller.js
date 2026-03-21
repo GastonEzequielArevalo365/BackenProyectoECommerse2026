@@ -2,6 +2,8 @@ const productos = require('../../data/productos.json')
 
 const controller = {}
 
+controller.productos = productos
+
 const getAllProductos = (req, res)=>{
     res.status(200).json(productos)
 }
