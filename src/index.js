@@ -9,7 +9,6 @@ const PORT = 3001
 
 //Solo pones ./routes y automáticamente se lee el index de dicha carpeta.
 const routes = require('./routes')
-const middlewares = require('./middlewares')
 
 //Esta línea se pone a nivel app lo que hace es que todas las líneas que se reciban en el body las tome como una JSON
 //app.use quiere decir ejecuta una funciín cuando llega una petición y coincide el path. No responde (a menos que vos lo hagas).
@@ -17,7 +16,6 @@ const middlewares = require('./middlewares')
 app.use(express.json())
 
 //Lo que hace en este caso es leer lo que hay dentro de cada una de las rutas y si hay alguna coincidencia con el path la app la ejecuta.
-
 app.use(routes.productosRoute)
 
 //Iniciamos el servidor y quedamos esperando el servidor solicitudes http.
