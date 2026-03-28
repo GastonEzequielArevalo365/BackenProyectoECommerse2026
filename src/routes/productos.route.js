@@ -13,16 +13,14 @@ const productosMiddlewares = require('../middlewares')
 //La siguiente línea ejecuta la funcion Router de express que separa y distingue que nuestra ruta actual es para productos.
 const route = Router()
 
-route.use(productosMiddlewares.requestTime)
-
-route.get('/productos',productosController.getAllProductos)
+route.get('/productos',productosMiddlewares.tiempoDeRespuesta,productosController.getAllProductos)
 
 //Usamos el :id porque lo que recibe como parámetro de la ruta pueden ser distintos valores.
-route.get('/productos/:id',productosMiddlewares.validaNumeroDeId,productosMiddlewares.validaExisteID, productosController.getProductoById)
+route.get('/productos/:id',productosMiddlewares.tiempoDeRespuesta,productosMiddlewares.validaNumeroDeId,productosMiddlewares.validaExisteID, productosController.getProductoById)
 
-route.delete('/productos/:id',productosMiddlewares.validaNumeroDeId,productosMiddlewares.validaExisteID , productosController.deleteProductoById)
+route.delete('/productos/:id',productosMiddlewares.tiempoDeRespuesta,productosMiddlewares.validaNumeroDeId,productosMiddlewares.validaExisteID , productosController.deleteProductoById)
 
-route.post('/productos',productosMiddlewares.validarProductoBody, productosController.crearProducto)
+route.post('/productos',productosMiddlewares.validarCampo("nombre"),productosMiddlewares.tiempoDeRespuesta,productosMiddlewares.validarProductoBody, productosController.crearProducto)
 
 
 //En el module exportando todas las rutas para ver cual encaja con la petición http
